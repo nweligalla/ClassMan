@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface EmployeeRepo extends JpaRepository<Employee, Long> {
 
     //spring automatically created the method by figuring out the method name
-    void deleteEmployeeById(Long id);
+    void deleteById(Long id);
 
     Optional<Employee> findEmployeeById(Long id);
 }
