@@ -6,6 +6,7 @@ import com.nweligalla.classman.repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -38,5 +39,10 @@ public class EmployeeService {
     //get employee by ID
     public Employee getEmployeeById(Long id) {
         return employeeRepo.findEmployeeById(id).orElseThrow(() -> new UserNotFoundException("User id" + id + "not found"));
+    }
+
+    //get all employees
+    public List<Employee> getAllEmployees() {
+        return employeeRepo.findAll();
     }
 }
